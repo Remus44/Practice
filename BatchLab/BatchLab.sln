@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37906.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchLab", "BatchLab\BatchLab.csproj", "{AE2A5064-C82F-44AF-8A08-BC3500F0E878}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchLab.Console", "BatchLab.Console\BatchLab.Console.csproj", "{D6916910-12D2-4026-A532-2EA658D4CBFE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE2A5064-C82F-44AF-8A08-BC3500F0E878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2A5064-C82F-44AF-8A08-BC3500F0E878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2A5064-C82F-44AF-8A08-BC3500F0E878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2A5064-C82F-44AF-8A08-BC3500F0E878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6916910-12D2-4026-A532-2EA658D4CBFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6916910-12D2-4026-A532-2EA658D4CBFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6916910-12D2-4026-A532-2EA658D4CBFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6916910-12D2-4026-A532-2EA658D4CBFE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BDBEE6F6-C085-4BBE-84B5-320B29E1B8E4}
+	EndGlobalSection
+EndGlobal
