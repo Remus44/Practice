@@ -21,63 +21,83 @@ namespace WorkshopManager.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            // Customer table definition based on model
             modelBuilder.Entity<Customer>(
                 customer =>
                 {
                     customer.HasKey(c => c.Id);
                     customer.Property(c => c.Name)
-                        .HasMaxLength(64)
+                        .HasMaxLength(100)
                         .IsRequired();
-                    customer.Property(c => c.Email)
-                        .HasMaxLength(64)
-                        .IsRequired();
-                    modelBuilder.Entity<Vehicle>()
-                        .HasOne(v => v.Customer)
-                        .WithMany(c => c.Vehicles)
-                        .HasForeignKey(v => v.Id);
+                    customer.HasIndex(c => c.Email).IsUnique();
+                    customer.Property(c => c.Phone).HasMaxLength(30);
                 }
              );
 
+            // Vehicle table definition based on model
             modelBuilder.Entity<Vehicle>(
                 vehicle =>
                 {
                     vehicle.HasKey(v => v.Id);
-                    vehicle.Property(v => v.LicencePlate)
-                        .HasMaxLength(12)
-                        .IsRequired();
+                    vehicle.HasIndex(v => v.LicencePlate)
+                        .IsUnique();
                     vehicle.Property(v => v.Brand)
-                        .HasMaxLength(24)
+                        .HasMaxLength(50)
                         .IsRequired();
                     vehicle.Property(v => v.Model)
-                        .HasMaxLength(24)
+                        .HasMaxLength(50)
                         .IsRequired();
-                    modelBuilder.Entity<ServiceJob>()
-                        .HasOne(s => s.Vehicle)
-                        .WithMany(v => v.ServiceJobs)
-                        .HasForeignKey(s => s.Id);
                 }
              );
 
-            modelBuilder.Entity<PartUsage>(
-                vehicle =>
+            // ServiceJob table definition based on model
+            modelBuilder.Entity<ServiceJob>(
+                serviceJob =>
                 {
-                    vehicle.HasKey(p => p.Id);
-                    vehicle.Property(v => v.Name)
-                        .HasMaxLength(64)
+                    serviceJob.HasKey(v => v.Id);
+                    serviceJob.Property(v => v.Description)
+                        .HasMaxLength(500)
                         .IsRequired();
-                    vehicle.Property(v => v.Quantity)
-                        .HasMaxLength(24)
-                        .IsRequired();
-                    vehicle.Property(v => v.UnitPrice)
-                        .HasMaxLength(24)
+                    serviceJob.Property(v => v.Status)
+                    .HasConversion<int>()
+                    .IsRequired();
+                    serviceJob.Property(v => v.LaborCost)
                         .HasPrecision(18, 2);
-                    modelBuilder.Entity<ServiceJob>()
-                        .HasOne(s => s.Vehicle)
-                        .WithMany(v => v.ServiceJobs)
-                        .HasForeignKey(s => s.Id);
                 }
              );
 
+            // PartUsage table definition based on model
+            modelBuilder.Entity<PartUsage>(
+                part =>
+                {
+                    part.HasKey(p => p.Id);
+                    part.Property(p => p.PartName)
+                        .HasMaxLength(100)
+                        .IsRequired();
+                    part.Property(p => p.Quantity);
+                    part.Property(p => p.UnitPrice)
+                        .HasPrecision(18, 2);
+                }
+             );
+
+
+            // Customer - Vehicle relation definition
+            modelBuilder.Entity<Vehicle>()
+                .HasOne(v => v.Customer)
+                .WithMany(c => c.Vehicles)
+                .HasForeignKey(c => c.CustomerId);
+
+            // Vehicle - ServiceJob relation definition
+            modelBuilder.Entity<ServiceJob>()
+                .HasOne(s => s.Vehicle)
+                .WithMany(v => v.ServiceJobs)
+                .HasForeignKey(s => s.VehicleId);
+
+            // ServiceJob - PartsUsage relation definition
+            modelBuilder.Entity<PartUsage>()
+                .HasOne(p => p.ServiceJob)
+                .WithMany(s => s.PartUsages)
+                .HasForeignKey(p => p.ServiceJobId);
         }
     }
 }
