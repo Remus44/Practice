@@ -51,3 +51,5 @@ C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab.Console\obj\Debug\net8.0\
 C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab.Console\obj\Debug\net8.0\BatchLab.Console.pdb
 C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab.Console\obj\Debug\net8.0\BatchLab.Console.genruntimeconfig.cache
 C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab.Console\obj\Debug\net8.0\ref\BatchLab.Console.dll
+C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab.Console\bin\Debug\net8.0\BatchLab.Contracts.dll
+C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab.Console\bin\Debug\net8.0\BatchLab.Contracts.pdb

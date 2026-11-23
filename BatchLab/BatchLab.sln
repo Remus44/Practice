@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchLab", "BatchLab\BatchL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchLab.Console", "BatchLab.Console\BatchLab.Console.csproj", "{D6916910-12D2-4026-A532-2EA658D4CBFE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BatchLab.Contracts", "BatchLab.Contracts\BatchLab.Contracts.csproj", "{1979645E-2246-4D09-B6DC-6F6425B87630}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D6916910-12D2-4026-A532-2EA658D4CBFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6916910-12D2-4026-A532-2EA658D4CBFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6916910-12D2-4026-A532-2EA658D4CBFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1979645E-2246-4D09-B6DC-6F6425B87630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1979645E-2246-4D09-B6DC-6F6425B87630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1979645E-2246-4D09-B6DC-6F6425B87630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1979645E-2246-4D09-B6DC-6F6425B87630}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
-﻿using BatchLab.Console.DTOs.Jobs;
+﻿using BatchLab.Contracts.Jobs;
 
-namespace BatchLab.Console.Clients;
+namespace BatchLab.Console.Clients.Interfaces;
 
 public interface IJobsApiClient
 {

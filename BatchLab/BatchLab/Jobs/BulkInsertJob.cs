@@ -1,8 +1,8 @@
 ﻿using System.Collections.Concurrent;
 using System.Security.Cryptography;
 using System.Text.Json;
+using BatchLab.Contracts.Jobs;
 using BatchLab.Data;
-using BatchLab.DTOs.Jobs;
 using BatchLab.Models;
 using Hangfire;
 using Microsoft.EntityFrameworkCore;

@@ -1,5 +1,4 @@
-﻿
-namespace BatchLab.Console.Clients;
+﻿namespace BatchLab.Console.Clients.Abstracts;
 
 public abstract class ApiClientBase
 {

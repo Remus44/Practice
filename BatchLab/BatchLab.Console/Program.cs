@@ -1,12 +1,12 @@
 ﻿
 using BatchLab.Console.Clients;
-using BatchLab.Console.Data;
-using BatchLab.Console.DTOs;
-using BatchLab.Console.DTOs.Jobs;
+using BatchLab.Console.Clients.Interfaces;
+using BatchLab.Console.Clients.Results;
+using BatchLab.Contracts.Jobs;
+using BatchLab.Contracts.Products;
 using Microsoft.Extensions.Configuration;
 using System.Net;
 using System.Text.Json;
-using static System.Net.WebRequestMethods;
 
 var config = new ConfigurationBuilder()
     .SetBasePath(AppContext.BaseDirectory)

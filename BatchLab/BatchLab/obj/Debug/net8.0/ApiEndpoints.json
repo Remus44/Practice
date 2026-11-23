@@ -25,7 +25,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Jobs.BulkInsertJobRequest",
+        "Type": "BatchLab.Contracts.Jobs.BulkInsertJobRequest",
         "IsRequired": true
       }
     ],
@@ -41,7 +41,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Jobs.BulkProductImportRequest",
+        "Type": "BatchLab.Contracts.Jobs.BulkProductImportRequest",
         "IsRequired": true
       },
       {
@@ -62,7 +62,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Jobs.BulkProductImportRequest",
+        "Type": "BatchLab.Contracts.Jobs.BulkProductImportRequest",
         "IsRequired": true
       }
     ],
@@ -78,7 +78,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Jobs.BulkPriceUpdateRequest",
+        "Type": "BatchLab.Contracts.Jobs.BulkPriceUpdateRequest",
         "IsRequired": true
       }
     ],
@@ -94,7 +94,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Jobs.BulkPriceUpdateRequest",
+        "Type": "BatchLab.Contracts.Jobs.BulkPriceUpdateRequest",
         "IsRequired": true
       },
       {
@@ -135,7 +135,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[BatchLab.DTOs.Products.ProductResponse, BatchLab, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[BatchLab.Contracts.Products.ProductResponse, BatchLab.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -155,13 +155,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Products.CreateProductRequest",
+        "Type": "BatchLab.Contracts.Products.CreateProductRequest",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "BatchLab.DTOs.Products.ProductResponse",
+        "Type": "BatchLab.Contracts.Products.ProductResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -187,7 +187,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BatchLab.DTOs.Products.ProductResponse",
+        "Type": "BatchLab.Contracts.Products.ProductResponse",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -212,7 +212,7 @@
       },
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Products.AdjustStockRequest",
+        "Type": "BatchLab.Contracts.Products.AdjustStockRequest",
         "IsRequired": true
       }
     ],
@@ -233,7 +233,7 @@
       },
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Products.AdjustStockRequest",
+        "Type": "BatchLab.Contracts.Products.AdjustStockRequest",
         "IsRequired": true
       },
       {
@@ -259,7 +259,7 @@
       },
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Products.AdjustStockRequest",
+        "Type": "BatchLab.Contracts.Products.AdjustStockRequest",
         "IsRequired": true
       }
     ],
@@ -280,7 +280,7 @@
       },
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Products.AdjustStockRequest",
+        "Type": "BatchLab.Contracts.Products.AdjustStockRequest",
         "IsRequired": true
       },
       {
@@ -306,7 +306,7 @@
       },
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Products.AdjustStockRequest",
+        "Type": "BatchLab.Contracts.Products.AdjustStockRequest",
         "IsRequired": true
       },
       {
@@ -332,7 +332,7 @@
       },
       {
         "Name": "request",
-        "Type": "BatchLab.DTOs.Products.AdjustStockRequest",
+        "Type": "BatchLab.Contracts.Products.AdjustStockRequest",
         "IsRequired": true
       }
     ],
@@ -437,135 +437,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BatchLab.Controllers.SandboxController",
-    "Method": "GetAll",
-    "RelativePath": "api/Sandbox",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BatchLab.Models.Product, BatchLab, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BatchLab.Controllers.SandboxController",
-    "Method": "PostProduct",
-    "RelativePath": "api/Sandbox",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "product",
-        "Type": "BatchLab.Models.Product",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BatchLab.Models.Product",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BatchLab.Controllers.SandboxController",
-    "Method": "GetProductById",
-    "RelativePath": "api/Sandbox/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int64",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "BatchLab.Models.Product",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "BatchLab.Controllers.SandboxController",
-    "Method": "PutProduct",
-    "RelativePath": "api/Sandbox/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int64",
-        "IsRequired": true
-      },
-      {
-        "Name": "request",
-        "Type": "BatchLab.DTOs.Products.UpdateProductRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BatchLab.Controllers.SandboxController",
-    "Method": "DeleteProduct",
-    "RelativePath": "api/Sandbox/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Nullable\u00601[[System.Int64, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "BatchLab.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[BatchLab.Models.WeatherForecast, BatchLab, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   }
 ]

@@ -1,6 +1,6 @@
 ﻿
+using BatchLab.Contracts.Products;
 using BatchLab.Data;
-using BatchLab.DTOs.Products;
 using BatchLab.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

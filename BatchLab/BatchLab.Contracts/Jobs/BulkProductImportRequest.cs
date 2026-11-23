@@ -1,4 +1,4 @@
-﻿namespace BatchLab.DTOs.Jobs;
+﻿namespace BatchLab.Contracts.Jobs;
 
 public record ProductImportItem(
     string Sku,

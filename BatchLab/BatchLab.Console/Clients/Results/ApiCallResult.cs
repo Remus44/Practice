@@ -1,7 +1,6 @@
-﻿
-using System.Net;
+﻿using System.Net;
 
-namespace BatchLab.Console.Clients;
+namespace BatchLab.Console.Clients.Results;
 
 public sealed record ApiCallResult(
     HttpStatusCode StatusCode,

@@ -317,3 +317,5 @@ C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab\bin\Debug\net8.0\sv\Hangf
 C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab\bin\Debug\net8.0\tr-TR\Hangfire.Core.resources.dll
 C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab\bin\Debug\net8.0\zh-TW\Hangfire.Core.resources.dll
 C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab\bin\Debug\net8.0\zh\Hangfire.Core.resources.dll
+C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab\bin\Debug\net8.0\BatchLab.Contracts.dll
+C:\Users\Remus\Source\Repos\Practice\BatchLab\BatchLab\bin\Debug\net8.0\BatchLab.Contracts.pdb

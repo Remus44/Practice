@@ -1,7 +1,9 @@
 ﻿using System.Net;
 using System.Net.Http.Json;
+using BatchLab.Console.Clients.Abstracts;
+using BatchLab.Console.Clients.Interfaces;
 using BatchLab.Console.Data;
-using BatchLab.Console.DTOs.Jobs;
+using BatchLab.Contracts.Jobs;
 
 namespace BatchLab.Console.Clients;
 

@@ -1762,6 +1762,16 @@
             "rid": "win"
           }
         }
+      },
+      "BatchLab.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/BatchLab.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BatchLab.Contracts.dll": {}
+        }
       }
     }
   },
@@ -4864,10 +4874,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "BatchLab.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../BatchLab.Contracts/BatchLab.Contracts.csproj",
+      "msbuildProject": "../BatchLab.Contracts/BatchLab.Contracts.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BatchLab.Contracts >= 1.0.0",
       "Hangfire.AspNetCore >= 1.8.25",
       "Hangfire.InMemory >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.34",
@@ -4908,7 +4924,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Remus\\Source\\Repos\\Practice\\BatchLab\\BatchLab.Contracts\\BatchLab.Contracts.csproj": {
+              "projectPath": "C:\\Users\\Remus\\Source\\Repos\\Practice\\BatchLab\\BatchLab.Contracts\\BatchLab.Contracts.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

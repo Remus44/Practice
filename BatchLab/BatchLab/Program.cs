@@ -1,7 +1,6 @@
 using BatchLab.Data;
 using BatchLab.Jobs;
 using Hangfire;
-using Hangfire.InMemory;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 

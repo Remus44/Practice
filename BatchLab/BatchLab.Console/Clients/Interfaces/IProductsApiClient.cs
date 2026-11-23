@@ -1,7 +1,7 @@
-﻿
-using BatchLab.Console.DTOs;
+﻿using BatchLab.Console.Clients.Results;
+using BatchLab.Contracts.Products;
 
-namespace BatchLab.Console.Clients;
+namespace BatchLab.Console.Clients.Interfaces;
 
 public interface IProductsApiClient
 {

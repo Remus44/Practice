@@ -1,6 +1,9 @@
 ﻿
+using BatchLab.Console.Clients.Abstracts;
+using BatchLab.Console.Clients.Interfaces;
+using BatchLab.Console.Clients.Results;
 using BatchLab.Console.Data;
-using BatchLab.Console.DTOs;
+using BatchLab.Contracts.Products;
 using System.Net;
 using System.Net.Http.Json;
 

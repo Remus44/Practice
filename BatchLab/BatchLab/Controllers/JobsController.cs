@@ -1,4 +1,4 @@
-﻿using BatchLab.DTOs.Jobs;
+﻿using BatchLab.Contracts.Jobs;
 using BatchLab.Jobs;
 using Hangfire;
 using Microsoft.AspNetCore.Mvc;
