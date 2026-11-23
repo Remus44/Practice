@@ -22,6 +22,51 @@ namespace BatchLab.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("BatchLab.Models.JobExecution", b =>
+                {
+                    b.Property<Guid>("OperationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("CompletedAtUtc")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("OperationType")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)");
+
+                    b.Property<string>("Parameters")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.HasKey("OperationId");
+
+                    b.ToTable("JobExecutions");
+                });
+
+            modelBuilder.Entity("BatchLab.Models.ProcessedChunk", b =>
+                {
+                    b.Property<Guid>("OperationId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("ChunkIndex")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CompletedAtUtc")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Signature")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.HasKey("OperationId", "ChunkIndex");
+
+                    b.ToTable("ProcessedChunks");
+                });
+
             modelBuilder.Entity("BatchLab.Models.Product", b =>
                 {
                     b.Property<long>("Id")

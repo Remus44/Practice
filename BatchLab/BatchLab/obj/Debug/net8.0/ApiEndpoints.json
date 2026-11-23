@@ -1,5 +1,131 @@
 [
   {
+    "ContainingType": "BatchLab.Controllers.JobsController",
+    "Method": "GetStatus",
+    "RelativePath": "api/Jobs/{jobId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "jobId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BatchLab.Controllers.JobsController",
+    "Method": "StartBulkInsert",
+    "RelativePath": "api/Jobs/bulk-insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BatchLab.DTOs.Jobs.BulkInsertJobRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BatchLab.Controllers.JobsController",
+    "Method": "StartChunkedImport",
+    "RelativePath": "api/Jobs/bulk-insert-chunked",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BatchLab.DTOs.Jobs.BulkProductImportRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "simulateFailure",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BatchLab.Controllers.JobsController",
+    "Method": "StartBulkInsertData",
+    "RelativePath": "api/Jobs/bulk-insert-data",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BatchLab.DTOs.Jobs.BulkProductImportRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BatchLab.Controllers.JobsController",
+    "Method": "StartBulkPriceUpdate",
+    "RelativePath": "api/Jobs/bulk-update-price",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BatchLab.DTOs.Jobs.BulkPriceUpdateRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BatchLab.Controllers.JobsController",
+    "Method": "StartChunkedPriceUpdate",
+    "RelativePath": "api/Jobs/bulk-update-price-chunked",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "BatchLab.DTOs.Jobs.BulkPriceUpdateRequest",
+        "IsRequired": true
+      },
+      {
+        "Name": "simulateFailure",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BatchLab.Controllers.JobsController",
+    "Method": "StartDemoJob",
+    "RelativePath": "api/Jobs/demo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BatchLab.Controllers.JobsController",
+    "Method": "StartFailingDemoJob",
+    "RelativePath": "api/Jobs/demo-fail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "BatchLab.Controllers.ProductsController",
     "Method": "GetAll",
     "RelativePath": "api/products",

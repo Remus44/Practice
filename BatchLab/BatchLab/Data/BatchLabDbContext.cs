@@ -15,6 +15,10 @@ public class BatchLabDbContext : DbContext
 
     public DbSet<StockMovement> StockMovements => Set<StockMovement>();
 
+    public DbSet<JobExecution> JobExecutions => Set<JobExecution>();
+
+    public DbSet<ProcessedChunk> ProcessedChunks => Set<ProcessedChunk>();
+
     protected override void OnModelCreating(
         ModelBuilder modelBuilder)
     {
@@ -63,5 +67,31 @@ public class BatchLabDbContext : DbContext
                 .HasOne(sm => sm.Product)
                 .WithMany(p => p.StockMovements)
                 .HasForeignKey(sm => sm.ProductId);
+
+        modelBuilder.Entity<JobExecution>(entity =>
+        {
+            entity.HasKey(j => j.OperationId);
+
+            entity.Property(j => j.OperationType)
+                .HasMaxLength(40)
+                .IsRequired();
+
+            entity.Property(j => j.Parameters)
+                .HasMaxLength(200)
+                .IsRequired();
+        });
+
+        modelBuilder.Entity<ProcessedChunk>(entity =>
+        {
+            entity.HasKey(x => new
+            {
+                x.OperationId,
+                x.ChunkIndex
+            });
+
+            entity.Property(x => x.Signature)
+                .HasMaxLength(100)
+                .IsRequired();
+        });
     }
 }

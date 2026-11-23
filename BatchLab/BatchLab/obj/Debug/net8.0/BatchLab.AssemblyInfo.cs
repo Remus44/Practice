@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BatchLab")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7c83fb160d58e84b276b52b66fbbb807a24bed4a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e954c48c9846e0a551bb84845fd619a33271408b")]
 [assembly: System.Reflection.AssemblyProductAttribute("BatchLab")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BatchLab")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,4 +1,7 @@
 using BatchLab.Data;
+using BatchLab.Jobs;
+using Hangfire;
+using Hangfire.InMemory;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -24,6 +27,16 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Add Hangfire server
+builder.Services.AddHangfire(config =>
+    config.UseInMemoryStorage());
+builder.Services.AddHangfireServer();
+
+// Job registrations
+builder.Services.AddScoped<DemoJob>();
+builder.Services.AddScoped<BulkInsertJob>();
+builder.Services.AddScoped<BulkPriceUpdateJob>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -31,6 +44,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.MapHangfireDashboard("/hangfire");
 }
 
 app.UseHttpsRedirection();
