@@ -16,6 +16,6 @@
 
         public int Year { get; set; }
 
-        public ICollection<ServiceJob> ServiceJobs { get; set; } = null!;
+        public ICollection<ServiceJob> ServiceJobs { get; set; } = new List<ServiceJob>();
     }
 }

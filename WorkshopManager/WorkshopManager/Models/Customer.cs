@@ -8,7 +8,7 @@
         
         public string Email { get; set; } = null!;
 
-        public string? Phone {  get; set; } = string.Empty;
+        public string? Phone {  get; set; }
 
         public ICollection<Vehicle> Vehicles
         { get; set; } = new List<Vehicle>();

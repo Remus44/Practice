@@ -18,12 +18,12 @@
 
         public JobStatus Status { get; set; }
 
-        public DateTime CreatedAt { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-        public DateTime? CompletedAt { get; set; }
+        public DateTime? CompletedAt { get; set; } = DateTime.UtcNow;
 
         public decimal LaborCost { get; set; }
 
-        public ICollection<PartUsage> PartUsages { get; set; } = null!;
+        public ICollection<PartUsage> PartUsages { get; set; } = new List<PartUsage>();
     }
 }
