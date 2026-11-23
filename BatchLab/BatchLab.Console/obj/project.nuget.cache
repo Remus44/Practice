@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "45GrTaMobA8=",
+  "dgSpecHash": "YvMqxBnTWhc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Remus\\Source\\Repos\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj",
+  "projectFilePath": "C:\\Users\\Remus\\Source\\Repos\\Practice\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Remus\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\Remus\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

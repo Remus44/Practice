@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QdNKi/T/MGM=",
+  "dgSpecHash": "NlT7u/9FOFU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Remus\\Source\\Repos\\BatchLab\\BatchLab\\BatchLab.csproj",
+  "projectFilePath": "C:\\Users\\Remus\\Source\\Repos\\Practice\\BatchLab\\BatchLab\\BatchLab.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Remus\\.nuget\\packages\\azure.core\\1.41.0\\azure.core.1.41.0.nupkg.sha512",
     "C:\\Users\\Remus\\.nuget\\packages\\azure.identity\\1.12.1\\azure.identity.1.12.1.nupkg.sha512",

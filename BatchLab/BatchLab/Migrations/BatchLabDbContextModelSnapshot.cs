@@ -58,8 +58,14 @@ namespace BatchLab.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Price")
+                        .HasDatabaseName("IX_Products_Price");
+
                     b.HasIndex("Sku")
                         .IsUnique();
+
+                    b.HasIndex("StockQuantity", "Price")
+                        .HasDatabaseName("IX_Products_StockQuantity_Price");
 
                     b.ToTable("Products");
                 });

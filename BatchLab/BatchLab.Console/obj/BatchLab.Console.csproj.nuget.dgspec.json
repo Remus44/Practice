@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Remus\\Source\\Repos\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj": {}
+    "C:\\Users\\Remus\\Source\\Repos\\Practice\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Remus\\Source\\Repos\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj": {
+    "C:\\Users\\Remus\\Source\\Repos\\Practice\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Remus\\Source\\Repos\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj",
+        "projectUniqueName": "C:\\Users\\Remus\\Source\\Repos\\Practice\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj",
         "projectName": "BatchLab.Console",
-        "projectPath": "C:\\Users\\Remus\\Source\\Repos\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj",
+        "projectPath": "C:\\Users\\Remus\\Source\\Repos\\Practice\\BatchLab\\BatchLab.Console\\BatchLab.Console.csproj",
         "packagesPath": "C:\\Users\\Remus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Remus\\Source\\Repos\\BatchLab\\BatchLab.Console\\obj\\",
+        "outputPath": "C:\\Users\\Remus\\Source\\Repos\\Practice\\BatchLab\\BatchLab.Console\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

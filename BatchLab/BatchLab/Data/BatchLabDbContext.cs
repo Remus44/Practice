@@ -43,6 +43,22 @@ public class BatchLabDbContext : DbContext
                 .HasDefaultValue(0L);
         });
 
+        modelBuilder.Entity<Product>()
+                .HasIndex(p => new
+                {
+                    p.StockQuantity,
+                    p.Price
+                })
+                .HasDatabaseName("IX_Products_StockQuantity_Price");
+
+        modelBuilder.Entity<Product>()
+                .HasIndex(p => p.Price)
+                .HasDatabaseName("IX_Products_Price");
+
+        modelBuilder.Entity<Product>()
+                .HasIndex(p => p.Price)
+                .HasDatabaseName("IX_Products_Price");
+
         modelBuilder.Entity<StockMovement>()
                 .HasOne(sm => sm.Product)
                 .WithMany(p => p.StockMovements)
