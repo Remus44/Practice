@@ -1,11 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Transactions;
 using AutoMapper;
 using Interview.Models;
 using Interview.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Transactions;
+using System.Xml.Linq;
 namespace Interview.Services
 {
 
@@ -53,7 +55,24 @@ namespace Interview.Services
             
             // Prepare the new record and send
             User user = _userRepository.Create(new User(name, email, usrRolesSet));
-            return _mapper.Map<UserDTO>(user); ;
+            return _mapper.Map<UserDTO>(user);
+        }
+
+        public UserDTO GetUser(int id)
+        {
+            var user = _userRepository.GetUser(id);
+            return _mapper.Map<UserDTO>(user);
+        }
+
+        public UserDTO UpdateUser(UpdateUserRequest updatedUser)
+        {
+            var resultUser = _userRepository.Update(_mapper.Map<User>(updatedUser));
+            return _mapper.Map<UserDTO>(resultUser);
+        }
+
+        public void DeleteUserAsync(UserDTO user)
+        {
+           _userRepository.DeleteUser(_mapper.Map<User>(user));            
         }
     }
 }

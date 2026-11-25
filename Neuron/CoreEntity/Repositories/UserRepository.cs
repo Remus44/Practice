@@ -1,6 +1,7 @@
+using Interview.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using Interview.Models;
 namespace Interview.Repositories
 {
 
@@ -22,18 +23,29 @@ namespace Interview.Repositories
         }
 
 
-        public bool Update(User user)
+        public User Update(User updatedUser)
         {
-            var existingUser = _context.Users.FirstOrDefault(u => u.Id == user.Id);
+            var existingUser = _context.Users.FirstOrDefault(u => u.Id == updatedUser.Id);
 
-            if (existingUser != null)
+            if (existingUser == null)
             {
-                _context.Entry(existingUser).CurrentValues.SetValues(user);
-
-                _context.SaveChanges();
-                return true; ;
+                return null;
             }
-            return false;
+            _context.Entry(existingUser).CurrentValues.SetValues(updatedUser);
+            _context.SaveChanges();
+
+            return updatedUser;
+        }
+
+        public User GetUser(int id)
+        {
+            return _context.Users.FirstOrDefault(u => u.Id == id); ;
+        }
+
+        public void DeleteUser(User user)
+        {
+            _context.Users.Remove(user);
+            _context.SaveChanges();
         }
 
     }

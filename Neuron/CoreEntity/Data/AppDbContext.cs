@@ -4,14 +4,18 @@ namespace Interview.Models
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
-        public DbSet<Permission> Permissions { get; set; }
-
-   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public AppDbContext(
+        DbContextOptions<AppDbContext> options)
+        : base(options)
         {
-            optionsBuilder.UseMySQL("server=localhost;database=Interview;user=root;password=root");
         }
+
+        public DbSet<User> Users => Set<User>();
+
+        public DbSet<Role> Roles => Set<Role>();
+
+        public DbSet<Permission> Permissions => Set<Permission>();
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -20,20 +24,22 @@ namespace Interview.Models
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
+                entity.Property(e => e.Email).HasMaxLength(50);
 
             });
 
             modelBuilder.Entity<Role>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).HasMaxLength(100);
                 entity.Property(e => e.Code).IsRequired();
             });
 
             modelBuilder.Entity<Permission>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Name).HasMaxLength(100);
                 entity.Property(e => e.Code).IsRequired();
-
             });
 
             modelBuilder.Entity<User>()

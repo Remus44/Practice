@@ -2,7 +2,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Interview.Models
 {
-     [Keyless]
     public class User: BaseEntity
     {
         public User(string name, string email, HashSet<Role> roles)

@@ -1,30 +1,46 @@
+using Interview.Controllers;
 using Interview.Models;
 using Interview.Repositories;
 using Interview.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.OpenApi.Models;
 using Quartz;
 using Quartz.Impl;
-
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
-using Quartz.Spi;
 using Quartz.Simpl;
-using Microsoft.OpenApi.Models;
-using Interview.Controllers;
+using Quartz.Spi;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var connectionString = builder.Configuration
+    .GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException(
+        "Missing database connection string.");
+
 // Add services to the container.
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(
+        connectionString,
+        ServerVersion.AutoDetect(connectionString)));
+
+// Add services to the container.
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<RoleService>();
 
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<RoleRepository>();
 builder.Services.AddScoped<PermissionRepository>();
-builder.Services.AddDbContext<AppDbContext>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.NumberHandling =
+        JsonNumberHandling.Strict;
+});
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
            {

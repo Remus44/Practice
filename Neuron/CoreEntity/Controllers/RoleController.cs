@@ -22,7 +22,8 @@ namespace Interview.Controllers
         {
             try
             {
-                Collection<RoleDTO> rolesAndPermissions = roleService.CreateUpdateRolesAndPermissionsAsync(rolesAndPermissionsRequest.Roles);
+                var t = roleService.CreateUpdateRolesAndPermissionsAsync(rolesAndPermissionsRequest.Roles);
+                Collection<RoleDTO> rolesAndPermissions = t.Result;
                 var response = new CreateRolesAndPermissionsResponse(rolesAndPermissions);
                 return Ok(response);
             }

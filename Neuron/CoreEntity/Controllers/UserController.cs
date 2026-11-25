@@ -43,6 +43,75 @@ public class UserController : ControllerBase
         }
     }
 
+    [HttpGet("{id:int}/getUser")]
+    public IActionResult GetUser(int id)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            _logger.LogInformation("GetUser");
+            UserDTO userDTO = _userService.GetUser(id);
+            var response = new CreateUserResponse(userDTO);
+            return Ok(response);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.Message, ex.StackTrace);
+            return BadRequest(new { error = ex.Message });
+        }
+    }
+
+    [HttpPost("updateUser")]
+    public IActionResult UpdateUser([FromBody] UpdateUserRequest user)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+        
+        try
+        {
+            _logger.LogInformation("UpdateUser");
+            var userExists = _userService.UpdateUser(user);
+            return Ok("User updated!");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.Message, ex.StackTrace);
+            return BadRequest(new { error = ex.Message });
+        }
+    }
 
 
+    [HttpDelete("{id:int}/deleteUser")]
+    public IActionResult DeleteUser(int id)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            _logger.LogInformation("DeleteUser");
+            var userExists = _userService.GetUser(id);
+
+            if (userExists == null)
+            {
+                return NotFound();
+            }
+            _userService.DeleteUserAsync(userExists);
+
+            return Ok("User deleted!");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex.Message, ex.StackTrace);
+            return BadRequest(new { error = ex.Message });
+        }
+    }
 }
