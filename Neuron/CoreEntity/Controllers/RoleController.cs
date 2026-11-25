@@ -16,12 +16,13 @@ namespace Interview.Controllers
         {
             this.roleService = roleService;
         }
+
         [HttpPost("createUpdateRolesAndPermissions")]
         public IActionResult CreateUpdateRolesAndPermissions([FromBody] CreateUpdateRolesAndPermissionsRequest rolesAndPermissionsRequest)
         {
             try
             {
-                Collection<RoleDTO> rolesAndPermissions = roleService.CreateUpdateRolesAndPermissions(rolesAndPermissionsRequest.Roles);
+                Collection<RoleDTO> rolesAndPermissions = roleService.CreateUpdateRolesAndPermissionsAsync(rolesAndPermissionsRequest.Roles);
                 var response = new CreateRolesAndPermissionsResponse(rolesAndPermissions);
                 return Ok(response);
             }

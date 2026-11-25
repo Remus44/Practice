@@ -53,7 +53,7 @@ namespace Interview.Services
             
             // Prepare the new record and send
             User user = _userRepository.Create(new User(name, email, usrRolesSet));
-            return new UserDTO(name = user.Name, email = user.Email, roles = user.Roles());
+            return _mapper.Map<UserDTO>(user); ;
         }
     }
 }

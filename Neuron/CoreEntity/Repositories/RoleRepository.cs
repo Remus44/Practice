@@ -1,4 +1,5 @@
 using Interview.Models;
+
 namespace Interview.Repositories
 {
     public class RoleRepository
@@ -36,10 +37,22 @@ namespace Interview.Repositories
             _context.SaveChanges();
         }
 
+        public async Task CreateAsync(Role role)
+        {
+            _context.Roles.Add(role);
+            await _context.SaveChangesAsync();
+        }
+
         public void Update(Role role)
         {
             _context.Roles.Update(role);
             _context.SaveChanges();
+        }
+
+        public async Task UpdateAsync(Role role)
+        {
+            _context.Roles.Update(role);
+            await _context.SaveChangesAsync();
         }
     }
 }
